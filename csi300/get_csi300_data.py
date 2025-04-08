@@ -1,5 +1,6 @@
 import akshare as ak
 import numpy as np
+from datetime import datetime
 
 # 获取沪深300成分股列表
 df_index = ak.index_stock_cons_csindex(symbol="000300")  # 沪深300指数代码
@@ -40,3 +41,5 @@ for index, item in enumerate(sorted_stock_data, start=1):  # 添加序号
     price = item['当前价格']
     price_str = "NaN" if np.isnan(price) else f"{price:.2f}"  # 格式化价格
     print(f"序号: {index}, 股票代码: {item['股票代码']}, 股票名称: {item['股票名称']}, 当前价格: {price_str}")
+
+print(datetime.now())
